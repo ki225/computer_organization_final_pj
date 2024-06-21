@@ -20,8 +20,15 @@ docker exec -it ubuntu18.04-container /bin/bash
 ```
 
 ## 簡介
-Gem5 模擬電腦硬體架構，而 NVMain 是針對 Non-Volatile Memories 的模擬器，搭配兩者可以模擬出更完整的電腦架構。不過 Gem5 為了讓我們更清楚內部運作，由程式碼來取代硬體的呈現，因此在修改完成後要把整個 gem5 重新編譯一次，才能算是設定好整個「電腦硬體」，也就是 gem5.opt 這個檔案。
+Gem5 模擬電腦硬體全系統架構，但主要還是圍繞在 CPU(如下圖)，而 NVMain 是針對 Non-Volatile Memories 的模擬器，搭配兩者可以模擬出更完整的電腦架構。不過 Gem5 為了讓我們更清楚內部運作，由程式碼來取代硬體的呈現，因此在修改完成後要把整個 gem5 重新編譯一次，才能算是設定好整個「電腦硬體」，也就是 gem5.opt 這個檔案。
 
+![image](https://github.com/ki225/computer_organization_final_pj/assets/123147937/bd970da7-8cc8-488f-ad82-5b39d66f3f0a)
+
+![image](https://github.com/ki225/computer_organization_final_pj/assets/123147937/4c337075-957a-404b-a38a-ba63f4aebebc)
+
+Gem5 是事件驅動，傳遞的單位是 packet，在 gem/src/mem/cache/ 裡的某些檔案(應該是修改 LFU 的 cc 檔案那邊)可以看到 packet_ptr 等等的資料名稱。
+
+![image](https://github.com/ki225/computer_organization_final_pj/assets/123147937/aaeb1c96-3d0d-4608-8712-cadd81af43d9)
 
 
 ![image](https://github.com/ki225/computer_organization_final_pj/assets/123147937/d0815bf2-aa70-4ae9-a728-7e1ad7d8de9b)
